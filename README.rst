@@ -119,9 +119,9 @@ your .travis.yml file should look like this:
     ...
     deploy:
         ...
-        user: musyoka-morris
+        user: <YourPypiUsername>
         password:
-            secure: YourEncryptedPasswordHere
+            secure: <YourEncryptedPassword>
 
 
 4. Push to GIT
