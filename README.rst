@@ -48,11 +48,11 @@ For Ubuntu:
 
     sudo apt-get install ruby-all-dev
 
-2. Create
 2. Create a .travis.yml file
 ******************************
 
 .travis.yml
+------------
 
 .. code-block:: yaml
 
@@ -60,7 +60,13 @@ For Ubuntu:
     install: pip install -r requirements.txt  # Install requirements
     script: pytest  # Run pytest tests
 
-Next we add instructions to start mongodb service
+MongoDB service
+------------------
+
+Add instructions to start mongodb service.
+
+This section is optional if you are not interested in MongoDB service.
+I simply left it here to serve as a guide for other services of interest.
 
 .. code-block:: yaml
 
@@ -70,7 +76,7 @@ Next we add instructions to start mongodb service
     before_script:
       - sleep 15  # Sleep for 15 seconds to ensure the service is started before we issue any commands
 
-By default, travis loads ``mongo v2.*``. We instruct travis to load mongo v4.0
+By default, travis loads ``mongo v2.4``. We instruct travis to load mongo v4.0
 
 .. code-block:: yaml
 
@@ -80,6 +86,9 @@ By default, travis loads ``mongo v2.*``. We instruct travis to load mongo v4.0
       apt:
         sources:
           - mongodb-4.0-xenial  # As defined on Travis Source safelist
+
+Pypi Deployment
+-----------------
 
 Add instruction for deployment to pypi
 
@@ -100,11 +109,20 @@ The easiest way to add the password encrypted with the public key is to use Trav
 
     travis encrypt Your-Password-Here --add deploy.password
 
-This command automatically adds your encrypted password on the .travis.yml file.
+Note: This assumes you are running the command in your project directory. If not, add ``-r owner/project``.
 
-Note::
+The command automatically adds your encrypted password on the .travis.yml file.
+your .travis.yml file should look like this:
 
-    We assumes you are running the command in your project directory. If not, add ``-r owner/project``.
+.. code-block:: yaml
+
+    ...
+    deploy:
+        ...
+        user: musyoka-morris
+        password:
+            secure: YourEncryptedPasswordHere
+
 
 4. Push to GIT
 ****************

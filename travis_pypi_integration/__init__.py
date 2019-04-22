@@ -2,7 +2,7 @@ from pymongoext import Model, DictField, IntField, Manipulator
 from pymongo import MongoClient
 
 
-__version__ = "2.1.0"
+__version__ = "2.1.1"
 
 
 def add(a, b):
