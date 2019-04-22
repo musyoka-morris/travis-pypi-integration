@@ -7,7 +7,7 @@ with open(path.join(dirname, 'README.rst')) as f:
     long_description = f.read()
 
 setup(
-    name='Travis Pypi Integration sample',
+    name='travis_pypi_integration',
     version=__version__,
     packages=find_packages(),
     description='Sample Travis CI + Pypi integration',
