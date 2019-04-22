@@ -1,0 +1,12 @@
+language: python
+python:
+- '3.5'
+install: pip install -r requirements.txt
+script: pytest
+deploy:
+  provider: pypi
+  user: musyoka-morris
+  password:
+    secure: FFyb6L+Iy6hu6bM9ium89cVPkov0ZhugxI5QW3ufn24dzpuJXyEEy8n6mmP6N7JFp4a1dqykKSYngE67mAUlLIoEFV4CY3M/7wMlYZWldLRTzcChuAmJgjqNIU6Ot8LKEnjG2zudFC3eHFv8E94VFsVLVhtF8nf1WNihMnkRPvtAj3VHHnSdV97qwCbTPYXwKTQimZG+Za//dMuAqkKdQYiZuJqsa3dBtWWDbD6KqEHOLU8LwiKL2JYQH/4uS0QY2BCdtSybcJ77aQgYJRtQVINYx9k531jsStQmNVyej6MsPM7z2V7rlZlhpib5Makx+w7AwR7I2s7mzOmyxIbOiusBojbtBYL7yo3TlK86wwdj6RlhBtIZ8leq4HF6nbZ8kYzOsT1n8Fm9OUTPkRJOgJkKe0WODi4k4HrY0+wYxkD+r3FOm1CPYVLeTeI0HhUTG61A13n3Ebe6q6lcoTTZRxRWEwuz4BWMcGJA1vD84/ddOjd865HGXsu+uuVR3c3oVv95Rg8wUpNmJc6cDtghU6+sUy+Er0ij5ROhp4mYrK8pbsy3JGF97D3qFL0JDH27Qag+iEnS+gmC9VZ02vu40qXg+eFMOoPn201e+WtZcWjrMUX9XAt2+DqM/rg2Nwa4JofXEKdNirjDf2Tr/QYbdilrBL/0jVdHphfy0fe995A=
+  distributions: "sdist bdist_wheel"
+  skip_existing: true
