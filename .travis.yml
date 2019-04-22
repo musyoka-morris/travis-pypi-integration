@@ -8,7 +8,6 @@ addons:
       - mongodb-4.0-xenial
 before_script:
   - sleep 15
-  - mongo --version
 install: pip install -r requirements.txt
 script: pytest
 deploy:
