@@ -52,7 +52,7 @@ For Ubuntu:
 ******************************
 
 .travis.yml
-------------
+~~~~~~~~~~~~~
 
 .. code-block:: yaml
 
@@ -61,7 +61,7 @@ For Ubuntu:
     script: pytest  # Run pytest tests
 
 MongoDB service
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Add instructions to start mongodb service.
 
@@ -88,7 +88,7 @@ By default, travis loads ``mongo v2.4``. We instruct travis to load mongo v4.0
           - mongodb-4.0-xenial  # As defined on Travis Source safelist
 
 Pypi Deployment
------------------
+~~~~~~~~~~~~~~~~
 
 Add instruction for deployment to pypi
 
